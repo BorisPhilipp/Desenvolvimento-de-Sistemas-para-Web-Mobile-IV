@@ -66,7 +66,7 @@ class _FormularioPageState extends State<FormularioPage> {
     } else {
       //caso haja erro de validação
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Por faovr, corrija os erros no formulário.'),
+          SnackBar(content: Text('Por favor, corrija os erros no formulário.'),
             backgroundColor: Colors.red,
           )
       );
@@ -163,6 +163,22 @@ class _FormularioPageState extends State<FormularioPage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     )
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: (){
+                  print('clicado'
+                  );
+                },
+                child: Container(
+                  color: Colors.deepPurple,
+                  padding: EdgeInsets.all(16),
+                  child: Center(
+                    child: Text('Teste'),
+                  ),
                 ),
               )
             ],
