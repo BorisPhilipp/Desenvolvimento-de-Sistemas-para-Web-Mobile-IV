@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() { // Notifica o Flutter que o estado mudou
       _contadorClique++;
 
-      if (_contadorClique > 10) {
+      if (_contadorClique >= 10) {
         _textColor = Colors.red;
       } else {
         _textColor = Colors.black;
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Text(
               '$_contadorClique',
-              style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: _textColor),
             ),
             const SizedBox(height: 20),
 
