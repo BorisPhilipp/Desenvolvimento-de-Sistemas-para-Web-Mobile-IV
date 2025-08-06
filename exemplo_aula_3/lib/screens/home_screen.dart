@@ -10,10 +10,22 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _contadorClique = 0; // Estado local para o contador
+  Color _textColor = Colors.black; // Estado local para a cor do texto
 
   void _incrementarContador() {
     setState(() { // Notifica o Flutter que o estado mudou
       _contadorClique++;
+
+      if (_contadorClique > 10) {
+        _textColor = Colors.red;
+      } else {
+        _textColor = Colors.black;
+      }
+    });
+  }
+  void _decrementarContador() {
+    setState(() { // Notifica o Flutter que o estado mudou
+      _contadorClique--;
     });
   }
 
@@ -78,6 +90,18 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
               child: const Text('Simular Reset/Logout'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _incrementarContador();
+              },
+              child: Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _decrementarContador();
+              },
+              child: Icon(Icons.remove),
             ),
           ],
         ),
