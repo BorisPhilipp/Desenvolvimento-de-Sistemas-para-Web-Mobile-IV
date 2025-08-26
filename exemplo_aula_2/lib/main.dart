@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Inputs e Interatividade',
       theme: ThemeData(
-        //primarySwatch: Colors.deepPurple
+        primarySwatch: Colors.deepPurple
 
       ),
       home: const FormularioPage(),
@@ -170,7 +170,8 @@ class _FormularioPageState extends State<FormularioPage> {
               ),
               GestureDetector(
                 onTap: (){
-                  print('clicado'
+                  print(
+                      'clicado'
                   );
                 },
                 child: Container(
